@@ -1,0 +1,15 @@
+# python
+__pycache__/
+*.py[cod]
+.venv
+*.egg-info
+
+# config
+.env
+
+# vscode
+.vscode/
+.idea/
+
+# disk cache
+.cache/

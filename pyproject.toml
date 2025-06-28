@@ -1,0 +1,62 @@
+[project]
+description = "Münster Interessierts Pipeline"
+name = "llm-podcast"
+readme = "README.md"
+requires-python = ">=3.11"
+version = "0.1.0"
+
+dependencies = [
+  "joblib>=1.4.2",
+  "langchain-core>=0.3.5",
+  "langchain-openai>=0.2.1",
+  "pandas>=2.2.3",
+  "pydantic>=2.9.2",
+  "pydantic-settings>=2.5.2",
+  "pydub>=0.25.1",
+  "pyttsx3>=2.98",
+  "requests>=2.32.3",
+  "pymupdf>=1.25.5",
+  "openai>=1.50.1",
+]
+
+[build-system]
+build-backend = "setuptools.build_meta"
+requires = ["setuptools >= 61.0"]
+
+[tool.setuptools]
+py-modules = ["llm_podcast"]
+
+[tool.uv]
+dev-dependencies = [
+  # linting
+  "mypy==1.13.0", # keep version in sync with .pre-commit-config.yaml
+  "ruff==0.7.4", # keep version in sync with .pre-commit-config.yaml
+  # development
+  "dvc>=3.59.1",
+  "dvc-ssh>=4.1.1",
+  "ipykernel>=6.29.5",
+  "pre-commit>=4.0.1",
+  "pytest>=8.3.3",
+  "tqdm>=4.66.5",
+  "types-requests",
+  "types-tqdm>=4.66.0.20240417",
+  "dvc-gs>=3.0.1",
+]
+
+[tool.mypy]
+ignore_missing_imports = true
+
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["test"]
+
+[tool.ruff]
+fix = true
+
+[tool.ruff.lint]
+select = [
+  "F", # Pyflakes
+  "E", # Pycodestyle
+  "W", # Pycodestyle
+  "I", # isort
+]

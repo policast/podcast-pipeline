@@ -1,0 +1,143 @@
+schema: '2.0'
+stages:
+  scrape:
+    cmd: python scripts/01_scrape.py
+    deps:
+    - path: .env
+      hash: md5
+      md5: 1855a40786c24cc1e9a11b3f46a93023
+      size: 217
+    - path: llm_podcast/settings.py
+      hash: md5
+      md5: 83d85edf8b9fd481f260a676e52ce530
+      size: 901
+    - path: scripts/01_scrape.py
+      hash: md5
+      md5: 0d87ea985a5aedc53a187b7bed93d21f
+      size: 3572
+    outs:
+    - path: data/meeting
+      hash: md5
+      md5: 51e84bce77f454954f925bd9145686ef.dir
+      size: 36365
+      nfiles: 1
+  download:
+    cmd: python scripts/02_download.py
+    deps:
+    - path: data/meeting
+      hash: md5
+      md5: 51e84bce77f454954f925bd9145686ef.dir
+      size: 36365
+      nfiles: 1
+    - path: llm_podcast/settings.py
+      hash: md5
+      md5: 83d85edf8b9fd481f260a676e52ce530
+      size: 901
+    - path: scripts/02_download.py
+      hash: md5
+      md5: 34171cb1050dc488c67a7e9d740174d9
+      size: 717
+    outs:
+    - path: data/pdf
+      hash: md5
+      md5: 9b8d46da0dd350ac2ad3988a43311322.dir
+      size: 268180285
+      nfiles: 138
+  pdf_to_txt:
+    cmd: python scripts/03_transcribe.py
+    deps:
+    - path: data/meeting
+      hash: md5
+      md5: 51e84bce77f454954f925bd9145686ef.dir
+      size: 36365
+      nfiles: 1
+    - path: data/pdf
+      hash: md5
+      md5: 9b8d46da0dd350ac2ad3988a43311322.dir
+      size: 268180285
+      nfiles: 138
+    - path: llm_podcast/settings.py
+      hash: md5
+      md5: 83d85edf8b9fd481f260a676e52ce530
+      size: 901
+    - path: scripts/03_transcribe.py
+      hash: md5
+      md5: 2e36aa27a191866443da4acf8ce51968
+      size: 730
+    outs:
+    - path: data/txt
+      hash: md5
+      md5: b63abf02d57e43300d419f17c27f7018.dir
+      size: 1003680
+      nfiles: 138
+  summary:
+    cmd: python scripts/04_summary.py
+    deps:
+    - path: data/txt
+      hash: md5
+      md5: b63abf02d57e43300d419f17c27f7018.dir
+      size: 1003680
+      nfiles: 138
+    - path: llm_podcast/settings.py
+      hash: md5
+      md5: 83d85edf8b9fd481f260a676e52ce530
+      size: 901
+    - path: scripts/04_summary.py
+      hash: md5
+      md5: 68c11fb23c1d7fb672ecd1200a6c7a29
+      size: 2423
+    outs:
+    - path: data/summary
+      hash: md5
+      md5: 16bb5df2925d657fd316aa77ff015ed9.dir
+      size: 70803
+      nfiles: 138
+  script:
+    cmd: python scripts/05_script.py
+    deps:
+    - path: data/meeting
+      hash: md5
+      md5: 51e84bce77f454954f925bd9145686ef.dir
+      size: 36365
+      nfiles: 1
+    - path: data/summary
+      hash: md5
+      md5: 16bb5df2925d657fd316aa77ff015ed9.dir
+      size: 70803
+      nfiles: 138
+    - path: llm_podcast/settings.py
+      hash: md5
+      md5: 83d85edf8b9fd481f260a676e52ce530
+      size: 901
+    - path: scripts/05_script.py
+      hash: md5
+      md5: eb86656c91bdd306bd6ff92b110d3623
+      size: 4837
+    outs:
+    - path: data/script
+      hash: md5
+      md5: 646aa7e59ecfd3c599e97bff9864ce1d.dir
+      size: 5686
+      nfiles: 1
+  tts:
+    cmd: python scripts/06_tts.py
+    deps:
+    - path: data/script
+      hash: md5
+      md5: 646aa7e59ecfd3c599e97bff9864ce1d.dir
+      size: 5686
+      nfiles: 1
+    - path: llm_podcast/settings.py
+      hash: md5
+      md5: 83d85edf8b9fd481f260a676e52ce530
+      size: 901
+    - path: scripts/06_tts.py
+      hash: md5
+      md5: 3a4c581b4fad32b2ecbd1bd2ae553134
+      size: 960
+    outs:
+    - path: data/sound
+      hash: md5
+      md5: 2dc1449e442500145e1912b19632fd40.dir
+      size: 2920320
+      nfiles: 1

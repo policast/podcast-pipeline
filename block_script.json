@@ -1,0 +1,219 @@
+[
+  {
+    "block": "Begrüßung_Alle",
+    "content": [
+      {
+        "voice": "moderator",
+        "text": "Hallo und herzlich willkommen zu einer neuen Folge von 'Münster interessiert's'. Ich bin David, euer Moderator, und wir widmen uns heute den Themen Umwelt, Verkehr und Schulen. Lisa, schön, dass du dabei bist!",
+        "file": []
+      }
+    ]
+  },
+  {
+    "block": "Begrüßung_Umwelt_Verkehr",
+    "content": [
+      {
+        "voice": "moderator",
+        "text": "Hallo und herzlich willkommen zu einer neuen Folge von 'Münster interessiert's'. Ich bin David, euer Moderator, und wir widmen uns heute den Themen Umwelt und Verkehr. Lisa, schön, dass du dabei bist!",
+        "file": []
+      }
+    ]
+  },
+  {
+    "block": "Begrüßung_Schulen_Verkehr",
+    "content": [
+      {
+        "voice": "moderator",
+        "text": "Hallo und herzlich willkommen zu einer neuen Folge von 'Münster interessiert's'. Ich bin David, euer Moderator, und wir widmen uns heute den Themen Schulen und Verkehr. Lisa, schön, dass du dabei bist!",
+        "file": []
+      }
+    ]
+  },
+  {
+    "block": "Begrüßung_Schulen_Umwelt",
+    "content": [
+      {
+        "voice": "moderator",
+        "text": "Hallo und herzlich willkommen zu einer neuen Folge von 'Münster interessiert's'. Ich bin David, euer Moderator, und wir widmen uns heute den Themen Schulen und Umwelt. Lisa, schön, dass du dabei bist!",
+        "file": []
+      }
+    ]
+  },
+  {
+    "block": "Begrüßung_Verkehr",
+    "content": [
+      {
+        "voice": "moderator",
+        "text": "Hallo und herzlich willkommen zu einer neuen Folge von 'Münster interessiert's'. Ich bin David, euer Moderator, und wir widmen uns heute dem Thema Verkehr. Lisa, schön, dass du dabei bist!",
+        "file": []
+      }
+    ]
+  },
+  {
+    "block": "Begrüßung_Umwelt",
+    "content": [
+      {
+        "voice": "moderator",
+        "text": "Hallo und herzlich willkommen zu einer neuen Folge von 'Münster interessiert's'. Ich bin David, euer Moderator, und wir widmen uns heute dem Thema Umwelt. Lisa, schön, dass du dabei bist!",
+        "file": []
+      }
+    ]
+  },
+  {
+    "block": "Begrüßung_Schulen",
+    "content": [
+      {
+        "voice": "moderator",
+        "text": "Hallo und herzlich willkommen zu einer neuen Folge von 'Münster interessiert's'. Ich bin David, euer Moderator, und wir widmen uns heute dem Thema Schulen. Lisa, schön, dass du dabei bist!",
+        "file": []
+      }
+    ]
+  },
+  {
+    "block": "Umwelt",
+    "content": [
+      {
+        "voice": "citizen",
+        "text": "Besonders das Thema Umwelt liegt mir am Herzen, da nächste Woche wichtige Ausschusssitzungen anstehen, die viele Bürgerinnen und Bürger interessieren dürften.",
+        "file": []
+      },
+      {
+        "voice": "moderator",
+        "text": "Absolut! Fangen wir doch gleich mit dem Thema Umwelt an. Ein großes Thema ist der Hitzeaktionsplan der Stadt Münster, der nächste Woche im Ausschuss für Umweltschutz, Klimaschutz und Bauwesen am 1. Oktober besprochen wird. Der Plan zielt darauf ab, die Gesundheit der Bevölkerung während extremer Hitzewellen zu schützen, besonders für ältere Menschen, Kinder und Menschen in besonderen Lebenslagen. Es geht um Maßnahmen wie die Einrichtung von Trinkwasserbrunnen und das Hitze-Infomobil. Dieser Plan ist Teil des größeren Klimaanpassungskonzepts der Stadt.",
+        "file": [
+          "file-LJDUk36mWiaZI15uXQH3nuL5"
+        ]
+      },
+      {
+        "voice": "citizen",
+        "text": "Das ist wirklich eine wichtige Entwicklung. Gerade für ältere Menschen ist das extrem wichtig, da Hitzewellen sie besonders belasten können. Es gibt auch spannende Ideen wie ein Hitzetelefon, das besonders in Notsituationen helfen kann.",
+        "file": []
+      },
+      {
+        "voice": "moderator",
+        "text": "Ein weiteres Thema im Umweltausschuss ist der Ausbau der Landesstraße L793 mit einer Busspur und einem Radweg. Das Ziel ist es, den Verkehr zu entlasten und die Sicherheit für Radfahrer und Fußgänger zu erhöhen. Diese Maßnahmen sollen die Mobilität in Münster nachhaltiger gestalten.",
+        "file": [
+          "file-17"
+        ]
+      },
+      {
+        "voice": "citizen",
+        "text": "Das klingt nach einem wichtigen Schritt, gerade für die Verkehrssicherheit. Es ist gut zu sehen, dass sich die Stadt aktiv mit solchen Maßnahmen beschäftigt. Ich hoffe, dass auch weitere umweltfreundliche Projekte folgen werden.",
+        "file": []
+      },
+      {
+        "voice": "moderator",
+        "text": "Das hoffe ich auch. Danke, Lisa, dass du deine Gedanken mit uns geteilt hast. Das war's erstmal zum Thema Umwelt.",
+        "file": []
+      }
+    ]
+  },
+  {
+    "block": "Verkehr",
+    "content": [
+      {
+        "voice": "citizen",
+        "text": "Und wie sieht es mit dem Thema Verkehr aus? Wird es da auch Neuigkeiten geben?",
+        "file": []
+      },
+      {
+        "voice": "moderator",
+        "text": "Ja, definitiv! In der Sitzung am 2. Oktober plant unter anderem, Maßnahmen zur Förderung des Radverkehrs weiter auszubauen. Hier geht es um sichere Radwege und die Schaffung von mehr Fahrradabstellplätzen, insbesondere in der Innenstadt.",
+        "file": []
+      },
+      {
+        "voice": "citizen",
+        "text": "Das freut mich zu hören. Vor allem auch, weil es die Umweltbelastung durch den Autoverkehr verringern kann.",
+        "file": []
+      },
+      {
+        "voice": "moderator",
+        "text": "Das hoffen wir alle. Vielen Dank, Lisa, für deine Einschätzung zum Thema Verkehr. Das war's für diesen Block.",
+        "file": []
+      }
+    ]
+  },
+  {
+    "block": "Schulen",
+    "content": [
+      {
+        "voice": "moderator",
+        "text": "Kommen wir zum Thema Schulen. In der Sitzung des Ausschusses für Schule und Weiterbildung am 1. Oktober geht es unter anderem um die bauliche Erweiterung des Freiherr-vom-Stein-Gymnasiums. Die Schule wird für die Umstellung auf G9 ausgebaut. Das Projekt soll bis zum Schuljahr sechsundzwanzig siebenundzwanzig abgeschlossen sein und umfasst Investitionen in Höhe von 17 Millionen Euro.",
+        "file": [
+          "file-13"
+        ]
+      },
+      {
+        "voice": "citizen",
+        "text": "Das klingt nach einem großen Vorhaben. Gibt es dabei auch Überlegungen zu nachhaltigem Bauen und Inklusion?",
+        "file": []
+      },
+      {
+        "voice": "moderator",
+        "text": "Ja, tatsächlich! Das gesamte Bauprojekt ist so geplant, dass es die Nachhaltigkeitskriterien erfüllt. Es wird eine extensive Dachbegrünung geben, und die Wärmeversorgung soll über eine monoenergetische Wärmepumpenanlage erfolgen. Zudem ist das Gebäude barrierefrei gestaltet. Auch eine Photovoltaikanlage ist Teil des Projekts, allerdings gibt es hier noch Diskussionsbedarf hinsichtlich der maximalen Kapazität.",
+        "file": [
+          "file-16"
+        ]
+      },
+      {
+        "voice": "citizen",
+        "text": "Super, dass an so viele Aspekte gedacht wird. Was gibt es Neues im Bereich der Schulanmeldungen? Viele Eltern haben ja immer wieder Schwierigkeiten mit den Verfahren.",
+        "file": []
+      },
+      {
+        "voice": "moderator",
+        "text": "Der Rat diskutiert über eine mögliche Reform des Anmeldeverfahrens an den städtischen Schulen. Es soll bis sechsundzwanzig siebenundzwanzig ein digitales Anmeldeverfahren eingeführt werden, das die Anmeldung vereinfachen soll. Bis dahin bleibt es jedoch beim bisherigen Verfahren mit vorgezogenen Anmeldungen für Gesamtschulen.",
+        "file": [
+          "file-18"
+        ]
+      },
+      {
+        "voice": "citizen",
+        "text": "Das hört sich gut an. Hoffentlich klappt das reibungslos.",
+        "file": []
+      },
+      {
+        "voice": "moderator",
+        "text": "Ja, das hoffen wir auch. Danke, Lisa, für deine Einblicke zum Thema Schulen.",
+        "file": []
+      }
+    ]
+  },
+  {
+    "block": "Abschluss",
+    "content": [
+      {
+        "voice": "moderator",
+        "text": "Danke, Lisa, dass du heute dabei warst und dich über diese wichtigen Themen informiert hast. Ich denke, wir konnten dir einen guten Überblick geben, was in der kommenden Woche im Rat der Stadt Münster ansteht. Bis zum nächsten Mal! Bleibt engagiert und informiert – Münster interessiert's!",
+        "file": []
+      }
+    ]
+  },
+  {
+    "block": "Outro",
+    "content": [
+      {
+        "voice": "moderator",
+        "text": "Bis zum nächsten Mal, Lisa! Bleib engagiert und informiert – Münster interessiert's!",
+        "file": []
+      }
+    ]
+  },
+  {
+    "block": "Snippet",
+    "content": [
+      {
+        "voice": "citizen",
+        "text": "Besonders das Thema Umwelt liegt mir am Herzen, da nächste Woche wichtige Ausschusssitzungen anstehen, die viele Bürgerinnen und Bürger interessieren dürften.",
+        "file": []
+      },
+      {
+        "voice": "moderator",
+        "text": "Ein großes Thema ist der Hitzeaktionsplan der Stadt Münster. Dieser soll die Gesundheit der Bevölkerung während extremer Hitzewellen schützen. Es geht um Maßnahmen wie die Einrichtung von Trinkwasserbrunnen und das Hitze-Infomobil. Dieser Plan ist Teil des größeren Klimaanpassungskonzepts der Stadt.",
+        "file": [
+          "file-LJDUk36mWiaZI15uXQH3nuL5"
+        ]
+      }
+    ]
+  }
+]

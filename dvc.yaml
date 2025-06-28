@@ -1,0 +1,52 @@
+---
+stages:
+  scrape:
+    cmd: python scripts/01_scrape.py
+    deps:
+      - .env
+      - llm_podcast/settings.py
+      - scripts/01_scrape.py
+    outs:
+      - data/meeting
+  download:
+    cmd: python scripts/02_download.py
+    deps:
+      - llm_podcast/settings.py
+      - scripts/02_download.py
+      - data/meeting
+    outs:
+      - data/pdf
+  pdf_to_txt:
+    cmd: python scripts/03_transcribe.py
+    deps:
+      - llm_podcast/settings.py
+      - scripts/03_transcribe.py
+      - data/meeting
+      - data/pdf
+    outs:
+      - data/txt
+  summary:
+    cmd: python scripts/04_summary.py
+    deps:
+      - llm_podcast/settings.py
+      - scripts/04_summary.py
+      - data/txt
+    outs:
+      - data/summary
+  script:
+    cmd: python scripts/05_script.py
+    deps:
+      - llm_podcast/settings.py
+      - scripts/05_script.py
+      - data/meeting
+      - data/summary
+    outs:
+      - data/script
+  tts:
+    cmd: python scripts/06_tts.py
+    deps:
+      - llm_podcast/settings.py
+      - scripts/06_tts.py
+      - data/script
+    outs:
+      - data/sound

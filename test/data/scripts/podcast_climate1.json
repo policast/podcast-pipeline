@@ -1,0 +1,126 @@
+[
+  {
+    "voice": "Lisa",
+    "text": "Hallo und herzlich Willkommen zu einer neuen Folge von Münster Interessierts! Ich bin {citizen}, euer Reporter, und heute sprechen wir über die anstehende Sitzung des Ausschusses für Umweltschutz, Klimaschutz und Bauwesen in Münster. Ich habe {reporter} zu Gast, die sich für die aktuellen Themen interessiert. Hallo {reporter}!"
+  },
+  {
+    "voice": "David",
+    "text": "Hallo {citizen}! Ich freue mich, hier zu sein und mehr über die Themen zu erfahren, die auf der Agenda stehen."
+  },
+  {
+    "voice": "Lisa",
+    "text": "Lass uns gleich mit dem ersten Punkt beginnen: Die Verpflichtung und Einführung neuer Mitglieder. Das ist immer ein spannender Moment in den Sitzungen, oder?"
+  },
+  {
+    "voice": "David",
+    "text": "Ja, das ist es! Es ist wichtig, frische Perspektiven in den Rat zu bringen. Was steht als Nächstes auf der Tagesordnung?"
+  },
+  {
+    "voice": "Lisa",
+    "text": "Der nächste Punkt ist die Festsetzung der Tagesordnung. Danach folgen Mitteilungen der Verwaltung. Das sind oft wichtige Informationen, die die Bürger betreffen."
+  },
+  {
+    "voice": "David",
+    "text": "Klingt gut! Gibt es schon Neuigkeiten von der Verwaltung, die du erwähnen kannst?"
+  },
+  {
+    "voice": "Lisa",
+    "text": "Das wird sich zeigen. Aber ich denke, die Mitteilungen werden sich auf aktuelle Projekte konzentrieren, insbesondere auf den Hitzeaktionsplan, den wir später besprechen werden."
+  },
+  {
+    "voice": "David",
+    "text": "Ah, der Hitzeaktionsplan! Was sind die Hauptziele dieses Plans?"
+  },
+  {
+    "voice": "Lisa",
+    "text": "Der Hitzeaktionsplan wurde entwickelt, um die Bevölkerung vor den gesundheitlichen Risiken extremer Hitze zu schützen. Es gibt präventive Maßnahmen wie die Einrichtung von Trinkwasserbrunnen und einen 'Coolen Stadtplan' für heiße Tage."
+  },
+  {
+    "voice": "David",
+    "text": "Das klingt sehr sinnvoll. Gibt es auch spezielle Angebote für vulnerable Gruppen?"
+  },
+  {
+    "voice": "Lisa",
+    "text": "Ja, insbesondere ältere Menschen und Kinder stehen im Fokus. Es wird auch ein Hitzetelefon eingerichtet, um schnell Informationen bereitstellen zu können."
+  },
+  {
+    "voice": "David",
+    "text": "Das ist wirklich wichtig. Was steht als Nächstes auf der Agenda?"
+  },
+  {
+    "voice": "Lisa",
+    "text": "Der nächste Punkt betrifft die Beantwortung von Anfragen und die Beratung von Anträgen. Das wird oft eine lebhafte Diskussion!"
+  },
+  {
+    "voice": "David",
+    "text": "Das kann ich mir vorstellen! Gibt es spezifische Anträge, die besprochen werden?"
+  },
+  {
+    "voice": "Lisa",
+    "text": "Ja, unter anderem den Entwurf zur Planfeststellung für den Ausbau der Landesstraße 793. Es wird eine Busspur und ein Geh- und Radweg angelegt."
+  },
+  {
+    "voice": "David",
+    "text": "Das klingt nach einem wichtigen Schritt zur Verbesserung der Verkehrsinfrastruktur. Was kannst du über die Finanzierung sagen?"
+  },
+  {
+    "voice": "Lisa",
+    "text": "Die Finanzierung ist im Nachtrags-Haushaltsplan verankert, und die Maßnahme wird priorisiert, um die Verkehrssicherheit zu erhöhen."
+  },
+  {
+    "voice": "David",
+    "text": "Super! Und was ist mit der Erweiterung des Ratsgymnasiums für die Umstellung auf G9?"
+  },
+  {
+    "voice": "Lisa",
+    "text": "Das ist ebenfalls ein spannendes Projekt. Die Gesamtkosten betragen etwa 14,8 Millionen Euro, und die Baumaßnahmen sollen bis 2026 abgeschlossen sein."
+  },
+  {
+    "voice": "David",
+    "text": "Das ist eine große Investition in die Bildung! Gibt es auch Maßnahmen zur Nachhaltigkeit?"
+  },
+  {
+    "voice": "Lisa",
+    "text": "Ja, die Planung umfasst unter anderem Photovoltaikanlagen und eine barrierefreie Gestaltung. Das ist ein wichtiger Aspekt der gesamten Entwicklung."
+  },
+  {
+    "voice": "David",
+    "text": "Das klingt vielversprechend! Was steht als nächstes an?"
+  },
+  {
+    "voice": "Lisa",
+    "text": "Ein weiteres wichtiges Thema ist die Entwicklung des ehemaligen Offizierskasinos der York-Kaserne zu einem offenen Begegnungsort für alle Bürger:innen."
+  },
+  {
+    "voice": "David",
+    "text": "Das klingt spannend! Welche Ziele verfolgt dieses Projekt?"
+  },
+  {
+    "voice": "Lisa",
+    "text": "Das Ziel ist es, einen Ort der Demokratie und Begegnung zu schaffen, der soziale Interaktion fördert. Es wird auch ein bürgerschaftliches Engagement einbezogen."
+  },
+  {
+    "voice": "David",
+    "text": "Das klingt nach einer großartigen Initiative! Ich bin gespannt, wie sich das entwickelt."
+  },
+  {
+    "voice": "Lisa",
+    "text": "Ja, und das letzte Thema auf der Agenda ist die Installation von Photovoltaikanlagen auf städtischen Gebäuden. Ein Schritt in Richtung erneuerbare Energien!"
+  },
+  {
+    "voice": "David",
+    "text": "Das ist wirklich wichtig für den Klimaschutz. Ich freue mich darauf, mehr darüber zu erfahren!"
+  },
+  {
+    "voice": "Lisa",
+    "text": "Absolut! Die Sitzung wird am 1. Oktober 2024 stattfinden. Ich danke dir, {reporter}, dass du heute bei uns warst!"
+  },
+  {
+    "voice": "David",
+    "text": "Danke, {citizen}! Es war mir eine Freude, mehr über die Themen zu erfahren."
+  },
+  {
+    "voice": "Lisa",
+    "text": "Und danke an alle Zuhörer! Bis zur nächsten Folge von Münster Interessierts!"
+  }
+]
