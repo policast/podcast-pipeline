@@ -20,7 +20,7 @@ See [installation instructions](https://docs.astral.sh/uv/getting-started/instal
 2. To install the Python version defined in `.python-version`, run:
 
     ```
-    uv install python
+    uv python install
     ```
 
 ## Development setup
@@ -43,8 +43,13 @@ See [installation instructions](https://docs.astral.sh/uv/getting-started/instal
 4. Authorize against S3-compatible storage for DVC:
 
     ```
+    uv run dvc remote modify --local url <PATH TO STORAGE e.g. s3://mybucket>
     uv run dvc remote modify --local myremote access_key_id <ACCESS_KEY>
     uv run dvc remote modify --local myremote secret_access_key <SECRET>
+    ```
+   check that it is set up with
+    ```
+    uv run dvc remote list
     ```
 
 5. Load data from DVC cache:

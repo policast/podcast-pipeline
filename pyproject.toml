@@ -17,6 +17,7 @@ dependencies = [
   "requests>=2.32.3",
   "pymupdf>=1.25.5",
   "openai>=1.50.1",
+  "dvc-s3>=3.3.0",
 ]
 
 [build-system]

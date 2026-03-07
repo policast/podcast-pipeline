@@ -25,5 +25,5 @@ class Meeting(BaseModel):
     name: str
     room: str
     start: str
-    agenda_items: list[AgendaItem]
-    agenda_files: list[AgendaFile]
+    agenda_items: list[AgendaItem] = []
+    agenda_files: list[AgendaFile] = []

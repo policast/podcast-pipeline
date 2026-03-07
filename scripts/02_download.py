@@ -6,16 +6,24 @@ directory.
 """
 
 # %%
+import os
+from pathlib import Path
+
+from dotenv import load_dotenv
 from tqdm import tqdm
 
 from llm_podcast.oparl.scrape import download_agenda_file
 from llm_podcast.schema import Meeting
-from llm_podcast.settings import MEETING_JSON_PATH, PDF_DIR
+from llm_podcast.settings import PDF_DIR
 
 # %%
 # load meeting.json
-
-meeting = Meeting.model_validate_json(json_data=MEETING_JSON_PATH.read_text())
+load_dotenv()
+print(os.getenv("MEETING_JSON_PATH"))
+print(os.getenv("MEETING_ID"))
+print(os.getenv("MEETING_DATE"))
+meeting_json_path_str = os.getenv("MEETING_JSON_PATH") or ""
+meeting = Meeting.model_validate_json(json_data=Path(meeting_json_path_str).read_text())
 
 
 # %%

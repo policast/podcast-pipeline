@@ -9,22 +9,28 @@ as a JSON file.
 # %%
 
 import json
+import os
+from pathlib import Path
 
 import pandas as pd
+from dotenv.main import find_dotenv, load_dotenv, set_key
 
 from llm_podcast.oparl.schema import OparlMeeting
-from llm_podcast.oparl.scrape import fetch_url, get_meeting
+from llm_podcast.oparl.scrape import fetch_url, get_next_rat_meeting
 from llm_podcast.schema import AgendaFile, AgendaItem, Meeting
-from llm_podcast.settings import MEETING_DIR, MEETING_ID, MEETING_JSON_PATH
+from llm_podcast.settings import MEETING_DIR
 
 # %%
 # download OparlMeeting
 
 
-oparl_meeting: OparlMeeting = get_meeting(meeting_id=MEETING_ID)
+# oparl_meeting: OparlMeeting = get_meeting(meeting_id=MEETING_ID)
+oparl_meeting: OparlMeeting = get_next_rat_meeting()
 
-print(json.dumps(oparl_meeting.model_dump(), indent=2, ensure_ascii=False))
-
+# print(json.dumps(oparl_meeting.model_dump(), indent=2, ensure_ascii=False))
+load_dotenv()
+print(os.environ.get("MEETING_ID"))
+print(os.environ.get("MEETING_DATE"))
 
 # %%
 # download organization names
@@ -126,9 +132,9 @@ agenda_items = [
 
 # %%
 # COMPILE MEETING INFO
-
+meeting_id_str = os.getenv("MEETING_ID") or ""
 meeting = Meeting(
-    id=MEETING_ID,
+    id=int(meeting_id_str),
     organization_names=organization_names,
     name=oparl_meeting.name,
     room=oparl_meeting.location.room,
@@ -137,14 +143,23 @@ meeting = Meeting(
     agenda_files=agenda_files,
 )
 
-print(json.dumps(meeting.model_dump(), indent=2, ensure_ascii=False))
+# print(json.dumps(meeting.model_dump(), indent=2, ensure_ascii=False))
 
 
 # %%
 # WRITE MEETING OBJECT TO FILE
 
 MEETING_DIR.mkdir(parents=True, exist_ok=True)
-MEETING_JSON_PATH.write_text(
+dotenv_path = find_dotenv()
+load_dotenv(dotenv_path)
+set_key(
+    dotenv_path,
+    "MEETING_JSON_PATH",
+    str(MEETING_DIR / f"{os.getenv('MEETING_ID')}.json"),
+)
+print(os.getenv("MEETING_JSON_PATH"))
+meeting_json_path_str = os.getenv("MEETING_JSON_PATH") or ""
+Path(meeting_json_path_str).write_text(
     data=json.dumps(
         obj=meeting.model_dump(),
         indent=2,

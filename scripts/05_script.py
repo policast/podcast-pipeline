@@ -2,11 +2,14 @@
 
 # %%
 import json
+import os
 from pathlib import Path
+
+from dotenv import load_dotenv
 
 from llm_podcast.llm import query_llm
 from llm_podcast.schema import AgendaFile, Meeting
-from llm_podcast.settings import MEETING_JSON_PATH, SCRIPT_DIR, SUMMARY_DIR
+from llm_podcast.settings import SCRIPT_DIR, SUMMARY_DIR
 
 TEMPERATURE: float = 0.5
 
@@ -85,8 +88,9 @@ JSON-Format:
 
 # %%
 # READ MEETING JSON
-
-meeting_dict = json.loads(MEETING_JSON_PATH.read_text())
+load_dotenv()
+meeting_json_path_str = os.getenv("MEETING_JSON_PATH") or ""
+meeting_dict = json.loads(Path(meeting_json_path_str).read_text())
 meeting = Meeting(**meeting_dict)
 
 

@@ -3,7 +3,10 @@
 # %%
 
 import json
+import os
+from pathlib import Path
 
+from dotenv import load_dotenv
 from openai import OpenAI
 
 from llm_podcast.settings import SCRIPT_DIR, SOUND_DIR
@@ -28,7 +31,7 @@ print(text_formatted)
 # TEXT TO SPEECH
 
 print("Generating audio ...")
-
+load_dotenv()
 openai = OpenAI()
 response = openai.audio.speech.create(
     model="gpt-4o-mini-tts",
@@ -43,7 +46,11 @@ response = openai.audio.speech.create(
 print("Saving audio file.")
 
 SOUND_DIR.mkdir(parents=True, exist_ok=True)
-output_file = SOUND_DIR / "episode.mp3"
+# output_file = SOUND_DIR / "episode.mp3"
+load_dotenv()
+meeting_date_str = os.getenv("MEETING_DATE") or ""
+
+output_file = SOUND_DIR / Path("episode_" + meeting_date_str + ".mp3")
 
 with open(output_file, "wb") as f:
     f.write(response.content)

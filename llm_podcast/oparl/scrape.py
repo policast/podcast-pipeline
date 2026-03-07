@@ -1,9 +1,11 @@
 """Scraping functions."""
 
 import json
+from datetime import datetime
 from pathlib import Path
 
 import requests
+from dotenv.main import find_dotenv, load_dotenv, set_key
 from joblib import Memory
 
 from llm_podcast.oparl.schema import OparlMeeting
@@ -103,3 +105,47 @@ def download_agenda_file(agenda_file: AgendaFile) -> None:
     response.raise_for_status()  # Raises an error for bad responses
     with open(PDF_DIR / agenda_file.filename, "wb") as file:
         file.write(response.content)
+
+
+# @memory.cache
+def get_next_rat_meeting() -> OparlMeeting:
+    """Get next meeting.
+
+    Args:
+        none
+    Returns:
+        OparlMeeting object.
+    """
+
+    # GET ALL MEETINGS FOR 'Rat'
+    rat_meetings_url = (
+        "https://oparl.stadt-muenster.de/bodies/0001/organizations/gr/258/meetings"
+    )
+    rat_meetings = fetch_all_pages(url=rat_meetings_url)
+
+    # FILTER DOWN TO MEETINGS IN THE FUTURE
+    future_rat_meetings = [
+        # meeting for meeting in rat_meetings if meeting["start"] >
+        # str(datetime.today().strftime('%Y-%m-%d'))
+        meeting
+        for meeting in rat_meetings
+        if meeting["start"] < str(datetime.today().strftime("%Y-%m-%d"))
+    ]
+
+    # Get next meeting
+    for dic in future_rat_meetings:
+        dic["start"] = datetime.strptime(dic["start"], "%Y-%m-%dT%H:%M:%S%z")
+
+    next_meeting_json = max(future_rat_meetings, key=lambda d: d.get("start", 0))
+    # next_meeting_json = min(future_rat_meetings, key=lambda d: d.get('start', 0))
+
+    # Convert start date back to string to add to OparlMeeting object
+    next_meeting_json["start"] = next_meeting_json["start"].strftime("%Y-%m-%d")
+
+    # Set variables as environment variables
+    dotenv_path = find_dotenv()
+    load_dotenv(dotenv_path)
+    set_key(dotenv_path, "MEETING_ID", next_meeting_json["id"].rsplit("/")[-1])
+    set_key(dotenv_path, "MEETING_DATE", next_meeting_json["start"])
+
+    return OparlMeeting(**next_meeting_json)
