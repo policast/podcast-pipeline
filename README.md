@@ -40,7 +40,7 @@ See [installation instructions](https://docs.astral.sh/uv/getting-started/instal
 3. Settings are set in the `.env` file and read from there by `llm_podcast.settings`.
   Use `.env.example` as a template.
 
-4. Authorize against S3-compatible storage for DVC:
+4. Authorize against S3-compatible storage for DVC (but you can also just use local cache):
 
     ```
     uv run dvc remote modify --local url <PATH TO STORAGE e.g. s3://mybucket>

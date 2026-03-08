@@ -23,12 +23,15 @@ from llm_podcast.settings import MEETING_DIR
 # %%
 # download OparlMeeting
 
-
+# For testing
 # oparl_meeting: OparlMeeting = get_meeting(meeting_id=MEETING_ID)
+
 oparl_meeting: OparlMeeting = get_next_rat_meeting()
 
-# print(json.dumps(oparl_meeting.model_dump(), indent=2, ensure_ascii=False))
+print(json.dumps(oparl_meeting.model_dump(), indent=2, ensure_ascii=False))
 load_dotenv()
+
+# Print out id and date of next meeting
 print(os.environ.get("MEETING_ID"))
 print(os.environ.get("MEETING_DATE"))
 
@@ -45,6 +48,9 @@ organization_names: list[str] = [
 # download agenda files
 
 # OPTIONAL: extraction function
+if not oparl_meeting.agendaItem:
+    print("No documents available for meeting yet")
+    raise SystemExit
 
 df_agenda = pd.DataFrame(
     [item.model_dump() for item in oparl_meeting.agendaItem]

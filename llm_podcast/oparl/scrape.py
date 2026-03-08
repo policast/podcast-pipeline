@@ -107,7 +107,7 @@ def download_agenda_file(agenda_file: AgendaFile) -> None:
         file.write(response.content)
 
 
-# @memory.cache
+@memory.cache
 def get_next_rat_meeting() -> OparlMeeting:
     """Get next meeting.
 
@@ -125,19 +125,16 @@ def get_next_rat_meeting() -> OparlMeeting:
 
     # FILTER DOWN TO MEETINGS IN THE FUTURE
     future_rat_meetings = [
-        # meeting for meeting in rat_meetings if meeting["start"] >
-        # str(datetime.today().strftime('%Y-%m-%d'))
         meeting
         for meeting in rat_meetings
-        if meeting["start"] < str(datetime.today().strftime("%Y-%m-%d"))
+        if meeting["start"] > str(datetime.today().strftime("%Y-%m-%d"))
     ]
 
     # Get next meeting
     for dic in future_rat_meetings:
         dic["start"] = datetime.strptime(dic["start"], "%Y-%m-%dT%H:%M:%S%z")
 
-    next_meeting_json = max(future_rat_meetings, key=lambda d: d.get("start", 0))
-    # next_meeting_json = min(future_rat_meetings, key=lambda d: d.get('start', 0))
+    next_meeting_json = min(future_rat_meetings, key=lambda d: d.get("start", 0))
 
     # Convert start date back to string to add to OparlMeeting object
     next_meeting_json["start"] = next_meeting_json["start"].strftime("%Y-%m-%d")
