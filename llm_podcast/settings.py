@@ -21,7 +21,7 @@ class Settings(BaseSettings):
 
 
 # Paths
-DATA_DIR: Path = Path("data/")
+DATA_DIR: Path = Path("..") / "data"
 MEETING_DIR: Path = DATA_DIR / "meeting"
 PDF_DIR: Path = DATA_DIR / "pdf"
 TXT_DIR: Path = DATA_DIR / "txt"

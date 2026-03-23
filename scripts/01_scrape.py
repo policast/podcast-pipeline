@@ -10,10 +10,9 @@ as a JSON file.
 
 import json
 import os
-from pathlib import Path
 
 import pandas as pd
-from dotenv.main import find_dotenv, load_dotenv, set_key
+from dotenv.main import find_dotenv, load_dotenv
 
 from llm_podcast.oparl.schema import OparlMeeting
 from llm_podcast.oparl.scrape import fetch_url, get_next_rat_meeting
@@ -39,12 +38,11 @@ print(os.environ.get("MEETING_DATE"))
 # download organization names
 
 # OPTIONAL: move to function or property
-organization_names: list[str] = [
+organization_names: list[str | None] = [
     fetch_url(url=org).get("name") for org in oparl_meeting.organization
 ]
 
 
-# %%
 # download agenda files
 
 # OPTIONAL: extraction function
@@ -158,14 +156,10 @@ meeting = Meeting(
 MEETING_DIR.mkdir(parents=True, exist_ok=True)
 dotenv_path = find_dotenv()
 load_dotenv(dotenv_path)
-set_key(
-    dotenv_path,
-    "MEETING_JSON_PATH",
-    str(MEETING_DIR / f"{os.getenv('MEETING_ID')}.json"),
-)
-print(os.getenv("MEETING_JSON_PATH"))
-meeting_json_path_str = os.getenv("MEETING_JSON_PATH") or ""
-Path(meeting_json_path_str).write_text(
+
+MEETING_JSON_PATH = MEETING_DIR / f"{os.getenv('MEETING_ID')}.json"
+
+MEETING_JSON_PATH.write_text(
     data=json.dumps(
         obj=meeting.model_dump(),
         indent=2,

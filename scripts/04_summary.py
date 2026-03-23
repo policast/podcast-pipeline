@@ -12,7 +12,7 @@ from tqdm import tqdm
 
 from llm_podcast.llm import query_llm
 from llm_podcast.schema import Meeting
-from llm_podcast.settings import SUMMARY_DIR, TXT_DIR
+from llm_podcast.settings import MEETING_DIR, SUMMARY_DIR, TXT_DIR
 
 TEMPERATURE: float = 0.5  # Temperature setting for summarization
 
@@ -35,8 +35,8 @@ Bleibe dabei neutral und versuche die wichtigsten Punkte zu erfassen.
 # %%
 # READ MEETING JSON
 load_dotenv()
-meeting_json_path_str = os.getenv("MEETING_JSON_PATH") or ""
-meeting_dict = json.loads(Path(meeting_json_path_str).read_text())
+MEETING_JSON_PATH = MEETING_DIR / f"{os.getenv('MEETING_ID')}.json"
+meeting_dict = json.loads(MEETING_JSON_PATH.read_text())
 meeting = Meeting(**meeting_dict)
 
 
