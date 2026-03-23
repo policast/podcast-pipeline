@@ -8,8 +8,9 @@ __pycache__/
 .env
 
 # vscode
-.vscode/
+.vscode/git
 .idea/
 
 # disk cache
 .cache/
+.dockerignore

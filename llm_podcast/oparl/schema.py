@@ -36,5 +36,5 @@ class OparlMeeting(BaseModel):
     location: OparlLocation
     organization: list[str]
     invitation: OParlInvitation | None = None
-    agendaItem: list[OParlAgendaItem] = []
+    agendaItem: list[OParlAgendaItem]
     # auxiliary_files: list[str]  # may be relevant for other meetings

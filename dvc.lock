@@ -5,7 +5,7 @@ stages:
     deps:
     - path: .env
       hash: md5
-      md5: 06e5dc79602024c7e6149d2cc27a5198
+      md5: 51114fbdd51024b5d56c2b6b2a464d4f
       size: 271
     - path: llm_podcast/settings.py
       hash: md5
@@ -13,13 +13,13 @@ stages:
       size: 845
     - path: scripts/01_scrape.py
       hash: md5
-      md5: fe28f94f4e503a84ce41b639f7953133
-      size: 4117
+      md5: 6a85a5447888b5102101a44944795faa
+      size: 4276
     outs:
     - path: data/meeting
       hash: md5
-      md5: 04827978faae579c7852127beeabb8ba.dir
-      size: 16379
+      md5: 91c2352e29ee343e08eb7fa61e797f68.dir
+      size: 46025
       nfiles: 1
   download:
     cmd: python scripts/02_download.py

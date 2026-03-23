@@ -15,7 +15,7 @@ from llm_podcast.settings import PDF_DIR
 memory = Memory(location=".cache", verbose=0)
 
 
-@memory.cache
+# @memory.cache
 def fetch_url(url: str) -> dict:
     """Fetch a URL and return the JSON response.
 
@@ -107,7 +107,7 @@ def download_agenda_file(agenda_file: AgendaFile) -> None:
         file.write(response.content)
 
 
-@memory.cache
+# @memory.cache
 def get_next_rat_meeting() -> OparlMeeting:
     """Get next meeting.
 
@@ -142,7 +142,15 @@ def get_next_rat_meeting() -> OparlMeeting:
     # Set variables as environment variables
     dotenv_path = find_dotenv()
     load_dotenv(dotenv_path)
-    set_key(dotenv_path, "MEETING_ID", next_meeting_json["id"].rsplit("/")[-1])
+    next_meeting_id = next_meeting_json["id"].rsplit("/")[-1]
+    set_key(dotenv_path, "MEETING_ID", next_meeting_id)
     set_key(dotenv_path, "MEETING_DATE", next_meeting_json["start"])
 
-    return OparlMeeting(**next_meeting_json)
+    MEETINGS_ROUTE = "https://oparl.stadt-muenster.de/bodies/0001/meetings/"
+
+    meeting_url = MEETINGS_ROUTE + next_meeting_id
+    meeting_json = fetch_url(url=meeting_url)
+
+    # oparl_meeting: OparlMeeting = get_meeting(meeting_id=int(next_meeting_id))
+    return OparlMeeting(**meeting_json)
+    # return oparl_meeting
